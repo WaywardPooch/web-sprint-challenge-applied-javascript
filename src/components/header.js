@@ -55,7 +55,7 @@ const headerAppender = (selector) => {
   // Append to the entry point...
   entryPoint.appendChild(
     // ... a newly-made header, with the following content
-    Header("Test", "December 10th, 2077", "Temporary text? HAH!")
+    Header("ULTIMATE LAMBDA", "December 10th, 2077", "The Future is NOW!")
   );
 };
 
