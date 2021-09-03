@@ -65,7 +65,21 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+
+   - The DOM is the "Document Object Model". It is a model/representation of our page that we can use to allow us to dynamically add new content or update the styling of our final site, programmatically. It's a language-independent API, acting like a middle-man/bridge, that gives us a way to change the content of our site without actually (permanently) altering any original HTML "skeletons" for pages we initially set up.
+
 2. What is an event?
+
+   - In code, an "event" is quite literally "something that occurs," just like in plain English. Nearly any action our users perform will be considered an event, and we can use these events to trigger code-execution when we want our site to respond to user (or program) actions.
+
 3. What is an event listener?
+
+   - An "event listener" is a thing that sits and waits until it "hears" an event it is assigned to "listen" for. When it "hears" that event, it will run code it was assigned to execute when the event it's listening for is triggered.
+
 4. Why would we convert a NodeList into an Array?
+
+   - Converting a NodeList into an Array allows us to perform array methods on it, which gives us more options in terms of data transformation/manipulation (such as access to methods like .map() and .filter(), for example) that we would otherwise not be able to use if we left it as-is.
+
 5. What is a component?
+
+   - A component is a reusable block of code that allows us to quickly manufacture a desired product based on criteria assigned to its manufacturing instructions. We can use them in web development to pre-define structured markup with content that gets automatically filled in to allow for the easy, dynamic creation of things like cards to populate a news feed, or elements of a user's profile page that get adjusted based on the user's information and styling we provide that page with.
