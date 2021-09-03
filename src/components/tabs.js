@@ -18,11 +18,12 @@ import axios from "axios";
 */
 
 const Tabs = (topics) => {
-  // Create Elements
+  // Create Main Element
   const topicsTab = document.createElement("div");
   // Add Class to Container
   topicsTab.classList.add("topics");
   topics.forEach((topic) => {
+    // Create Topic Elements
     const topicEntry = document.createElement("div");
     // Assign Classes
     topicEntry.classList.add("tab");
@@ -50,11 +51,11 @@ const tabsAppender = async (selector) => {
   const entryPoint = document.querySelector(selector);
   try {
     // Send a get request for "topic data" to the local API
-    const topicsData = await axios.get("http://localhost:5000/api/topics");
+    const topics = await axios.get("http://localhost:5000/api/topics");
     // Create topics using topicsData and append them to the DOM
-    entryPoint.appendChild(Tabs(topicsData["data"]["topics"]));
+    entryPoint.appendChild(Tabs(topics.data["topics"]));
   } catch (error) {
-    console.log(`ERROR: Could not fetch data! Problem: ${error}`);
+    console.log(`ERROR: Could not fetch topic data! Problem: ${error}`);
   }
 };
 

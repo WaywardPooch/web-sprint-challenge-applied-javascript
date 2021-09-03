@@ -1,3 +1,5 @@
+import axios from "axios";
+
 /*
   TASK 5
   ---------------------
@@ -63,6 +65,25 @@ const Card = (article) => {
   function.
 */
 
-const cardAppender = (selector) => {};
+const cardAppender = async (selector) => {
+  // Convert "selector" to a true entry point
+  const entryPoint = document.querySelector(selector);
+  try {
+    // Send a get request for "article data" to the local API
+    const articles = await axios.get("http://localhost:5000/api/articles");
+    // Create an array from the topics in the articles object
+    const topicsArr = Object.values(articles["data"]["articles"]);
+    // For each array of articles inside the topics array...
+    topicsArr.forEach((articleArr) => {
+      // ...loop over each article object...
+      articleArr.forEach((articleObj) => {
+        // ...and append each article to the entry point
+        entryPoint.appendChild(Card(articleObj));
+      });
+    });
+  } catch (error) {
+    console.log(`ERROR: Could not fetch article data! Problem: ${error}`);
+  }
+};
 
 export { Card, cardAppender };
