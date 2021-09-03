@@ -49,6 +49,13 @@ const Card = (article) => {
   articleAuthorDiv.appendChild(articleAuthorName);
   articleAuthorImgCont.appendChild(articleAuthorPhoto);
 
+  // Add event listener
+  articleCard.addEventListener("click", () => {
+    console.log(
+      `You clicked on the article headlined: "${articleHeadline.textContent}"`
+    );
+  });
+
   // Return Markup
   return articleCard;
 };
